@@ -1,8 +1,8 @@
 {
-  "name": "Portfolio App",
-  "short_name": "Portfolio",
-  "theme_color": "#f5d061",
-  "background_color": "#f5d061",
+  "name": "MK Portfolio",
+  "short_name": "Muneeb Khan",
+  "theme_color": "#ffd369",
+  "background_color": "#ffd369",
   "display": "standalone",
   "orientation": "portrait-primary",
   "scope": "/",

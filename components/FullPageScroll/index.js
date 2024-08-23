@@ -117,6 +117,10 @@ function FullPageScroll() {
         root.style.setProperty('--themeColor2', color.layer2);
         root.style.setProperty('--themeColor3', color.layer3);
         root.style.setProperty('--themeColor4', color.layer4);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta?.setAttribute && meta?.content !== color.layer2) {
+            meta.setAttribute('content', color.layer2)
+        }
     }
 
 

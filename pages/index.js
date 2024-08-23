@@ -26,7 +26,7 @@ const ViewElement = ({ children, id }) => (
 export default function Home() {
   return (
     <>
-      {/* <PreLoader /> */}
+      <PreLoader />
 
       <Cursor />
       <ParallaxProvider>
