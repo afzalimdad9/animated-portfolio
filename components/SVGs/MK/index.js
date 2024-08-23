@@ -7,7 +7,7 @@ const MK = props => {
   return (
     <svg {...props} version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
 	<title>MK</title>
-	<style jsx>
+	<style>
     {`
 		.s0 { fill: none;stroke: inherit;stroke-width: 10 } 
 		.s1 { paint-order:stroke fill markers;stroke: inherit;stroke-width: 6;stroke-linejoin: round;;fill: inherit } 
