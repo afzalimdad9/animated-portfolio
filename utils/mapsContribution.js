@@ -1,12 +1,14 @@
 const mapsContribution = {
-    heading: `GSV Contribution`,
-    logo: '/assets/streeviewtrusted.png',
-    title: 'Google Street View',
-    description: `Covered most of the 360
+  heading: `GSV Contribution`,
+  data: [
+    {
+      logo: "/assets/streeviewtrusted.png",
+      title: "Google Street View",
+      description: `Covered most of the 360
     Street View of Karachi,
     and the highest 360
     Contribution in Pakistan.`,
-    paragraph: `
+      paragraph: `
     If we look over Pakistan's Map
     there're actually very few 360
     Street View blue lines over the
@@ -21,8 +23,10 @@ const mapsContribution = {
     and it already got Millions of
     views in really less time.
     `,
-    iframe: 'https://www.youtube.com/embed/QyIWc_OBSjY?start=1'
+      iframe: "https://www.youtube.com/embed/QyIWc_OBSjY?start=1",
+      iframeTitle: 'YouTube video player',
+    },
+  ],
+};
 
-}
-
-export default mapsContribution
+export default mapsContribution;

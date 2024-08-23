@@ -4,11 +4,7 @@ import ViewsTitle from '../../components/ViewsTitle'
 
 const MapsContribution = ({ data: {
     heading,
-    logo,
-    title,
-    description,
-    paragraph,
-    iframe,
+    data
 } }) => {
     return (
         <div className='mk-maps'>
@@ -17,25 +13,27 @@ const MapsContribution = ({ data: {
                     <ViewsTitle
                         text={heading}
                     />
-                    <div data-aos="fade-down-right">
+                    {
+                    data.map((item, index) => (
+                    <div key={index} data-aos="fade-down-right">
                         <div className='mk-box'>
                             <div className='row'>
                                 <div
                                     data-aos="zoom-in-left"
                                     className='col-3 d-flex flex-column justify-content-center px-sm-3 p-0'>
-                                    <img src={logo} className="mk-gsv-logo" />
+                                    <img src={item.logo} className="mk-gsv-logo" />
                                 </div>
                                 <div className='col-9 d-flex flex-column justify-content-center mt-2 mb-2'>
                                     <div data-aos="zoom-in-right" className='mk-box-heading'>
-                                        {title}
+                                        {item.title}
                                     </div>
                                     <div data-aos="zoom-in-left" className='mk-box-subheading'>
-                                        {description}
+                                        {item.description}
                                     </div>
                                 </div>
                             </div>
                             <div data-aos="zoom-in-right" className='mk-box-para'>
-                                {paragraph}
+                                {item.paragraph}
                             </div>
                             <div
                                 data-aos="zoom-in-left"
@@ -43,10 +41,12 @@ const MapsContribution = ({ data: {
                                 <iframe
                                     width="560" height="315"
                                     className='mk-box-iframe'
-                                    src={iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                    src={item.iframe} title={item.iframeTitle} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             </div>
                         </div>
                     </div>
+                ))
+                    }
                 </div>
             </div>
         </div>
