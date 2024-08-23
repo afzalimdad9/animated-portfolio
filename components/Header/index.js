@@ -53,7 +53,7 @@ const HamburgerBody = ({ menus, handleItemSelect }) => (
     </div>
 )
 
-const Header = ({ data: { menus, handleItemSelect, handleIconClick } }) => {
+const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn } }) => {
 
     const [menuVisibled, handleVisibleMenu] = useState(false);
 
@@ -65,7 +65,14 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick } }) => {
                 <div>
                     <MK onClick={handleIconClick} width={45} height={45} />
                 </div>
-                <div className='d-block '>
+                <div className='d-flex'>
+                    {rightBtn && (
+                        <div>
+                            <button onClick={rightBtn.onClick} className='mk-button-md mx-3 mx-lg-5'>
+                                {rightBtn.label}
+                            </button>
+                        </div>
+                    )}
                     <div className={`mk-header-menu ${menuVisibled && 'mk-header-menu-visible'}`}>
                         <Hamburger className="mk-hamburger-icon" onClick={onChangeMenu} width={30} height={30} />
                         <HamburgerBody menus={menus} handleItemSelect={handleItemSelect} />

@@ -1,4 +1,4 @@
-import { scrollTo } from "./methods";
+import { openLink, scrollTo } from "./methods";
 
 
 const header = {
@@ -12,6 +12,10 @@ const header = {
         { title: 'Contribution', id: 'contributions' },
         { title: 'Contact', id: 'contact' },
     ],
+    rightBtn: {
+        label: 'Curriculum Vitae | CV',
+        onClick: () => openLink('assets/cv.pdf')
+    },
     handleIconClick: () => scrollTo('home'),
     handleItemSelect: (menu) => scrollTo(menu.id),
 }

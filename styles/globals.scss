@@ -1,12 +1,11 @@
 @import './theme.scss';
 
-
 html,
 body {
 
   padding: 0;
   margin: 0;
-  font-family: 'Quicksand','Montserrat','Source Code Pro', sans-serif;
+  font-family: 'Quicksand', 'Montserrat', 'Source Code Pro', sans-serif;
 
   overflow-x: hidden;
   background-color: $themeColor1;
@@ -21,7 +20,7 @@ body {
   // background-image: linear-gradient(to right, red, yellow, green, cyan, blue, violet);
   // background: #FFCD58;
   // color: #FF5C4D;
-    // filter: invert(100%);
+  // filter: invert(100%);
 }
 
 a {
@@ -85,49 +84,58 @@ a {
   flex: 1;
 }
 
-.mk-button {
-  background-color: transparent;
-  line-height: 1;
-  border: 1px solid $themeColor4;
-  color: $themeColor4;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 1.25rem 1.75rem;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  transition: .2s transform ease-in-out;
-  will-change: transform;
-  z-index: 0;
+$variants: ("": ("font-size": 14px, "padding": 1.25rem 1.75rem),
+  "-lg": ("font-size": 14px, "padding": 1.25rem 1.75rem),
+  "-md": ("font-size": 13px, "padding": 0.75rem 1rem),
+  "-sm": ("font-size": 10px, "padding": 0.5rem 0.75rem));
 
-  &::after {
-    background-color: $themeColor4;
+@each $name,
+$variant in $variants {
+  .mk-button#{$name} {
+    background-color: transparent;
+    line-height: 1;
+    border: 1px solid $themeColor4;
+    color: $themeColor4;
     border-radius: 4px;
-    content: '';
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(-100%, 0) rotate(10deg);
-    transform-origin: top left;
-    transition: .2s transform ease-out;
+    font-size: map-get($variant, font-size);
+    font-weight: 600;
+    padding: map-get($variant, padding);
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: .2s transform ease-in-out;
     will-change: transform;
-    z-index: -1;
+    z-index: 0;
+
+    &::after {
+      background-color: $themeColor4;
+      border-radius: 4px;
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-100%, 0) rotate(10deg);
+      transform-origin: top left;
+      transition: .2s transform ease-out;
+      will-change: transform;
+      z-index: -1;
+    }
+
+    &:hover::after {
+      transform: translate(0, 0);
+    }
+
+    &:hover {
+      border: 2px solid transparent;
+      color: $themeColor2;
+      transform: scale(1.05);
+      will-change: transform;
+    }
   }
 
-  &:hover::after {
-    transform: translate(0, 0);
-  }
-
-  &:hover {
-    border: 2px solid transparent;
-    color: $themeColor2;
-    transform: scale(1.05);
-    will-change: transform;
-  }
 }
 
 
