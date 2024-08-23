@@ -1,0 +1,25 @@
+:root {
+    --themeColor1: white;
+    --themeColor2: white;
+    --themeColor3: white;
+    --themeColor4: white;
+
+    --scrollBarWidth: 0px;
+}
+
+
+$themeColor1: var(--themeColor1);
+$themeColor2: var(--themeColor2);
+$themeColor3: var(--themeColor3);
+$themeColor4: var(--themeColor4);
+
+$scrollBarWidth: var(--scrollBarWidth);
+
+$defaultBorder: 4px;
+
+$scrolledBarHeight: 5px;
+
+$headerHeight: 90px;
+
+$bcTransition1s: background-color 1000ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+$allTransitoin3s: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);

@@ -1,0 +1,15 @@
+@import './theme.scss';
+
+.mk-top-scrolled {
+    width: 100vw;
+    height: $scrolledBarHeight;
+    position: fixed;
+    z-index: 5;
+
+    .mk-top-scrolled-highlight {
+        height: 100%;
+        width: 100%;
+        background-color: $themeColor3;
+        transition: all 500ms cubic-bezier(0.85, 0.58, 0, 1.46);
+    }
+}

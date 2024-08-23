@@ -1,0 +1,63 @@
+@import './theme.scss';
+
+.mk-reviews {
+    width: 100vw;
+    min-height: 100vh;
+
+    .mk-reviews-container {
+        max-width: 900px;
+        margin: auto;
+        // min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    .mk-reviews-list {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10% 100px 10%
+    }
+
+    .mk-review-item-info {
+        width: fit-content;
+        line-height: 1.5;
+        padding: 5px 20px 3px 20px;
+        border-radius: $defaultBorder $defaultBorder 0px 0px;
+        font-size: clamp(10px, 2vw, 20px);;
+    }
+
+    .mk-review-item {
+        margin: 0 0 clamp(15px, 2vw, 25px) 0;
+        font-size: clamp(40px, 8vw, 80px);
+        font-weight: 600;
+        line-height: 1;
+        white-space: nowrap;
+        padding: 5px 10px;
+        width: fit-content;
+        text-transform: uppercase;
+        border-radius: 0 $defaultBorder $defaultBorder $defaultBorder;
+    }
+
+    .mk-reviwe-color-theme1 {
+        background-color: $themeColor2;
+        color: $themeColor3;
+    }
+
+    .mk-reviwe-color-theme2 {
+        background-color: $themeColor2;
+        color: $themeColor4;
+    }
+
+
+    .mk-reviwe-color-theme1-invert {
+        background-color: $themeColor3;
+        color: $themeColor2;
+    }
+
+    .mk-reviwe-color-theme2-invert {
+        background-color: $themeColor4;
+        color: $themeColor2;
+    }
+}

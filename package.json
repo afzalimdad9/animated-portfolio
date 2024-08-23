@@ -1,0 +1,32 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.2.0",
+    "gooey-react": "^1.1.0",
+    "kursor": "^0.1.6",
+    "locomotive-scroll": "^4.1.4",
+    "next": "12.2.3",
+    "react": "^18.2.0",
+    "react-animated-cursor": "^2.5.1",
+    "react-animated-text-content": "^1.0.1",
+    "react-dom": "18.2.0",
+    "react-motion": "^0.5.2",
+    "react-scroll-parallax": "^3.3.1",
+    "react-spring": "^6.1.0",
+    "sass": "^1.54.0",
+    "use-dencrypt-effect": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.20.0",
+    "eslint-config-next": "12.2.3"
+  }
+}

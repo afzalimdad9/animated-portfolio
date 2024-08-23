@@ -1,0 +1,26 @@
+@import './theme.scss';
+
+.mk-views-title-container {
+    display: flex;
+    margin-bottom: 30px;
+
+    .mk-views-title-text {
+        font-size: clamp(24px, 8vw, 40px);
+        line-height: 40px;
+        font-weight: 700;
+        color: $themeColor4;
+    }
+
+    .mk-views-title-line-container {
+        flex: 1 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .mk-views-title-line {
+            height: 2px;
+            background-color: $themeColor2;
+            width: 90%;
+        }
+    }
+}

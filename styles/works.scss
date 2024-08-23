@@ -1,0 +1,88 @@
+@import './theme.scss';
+
+.mk-works {
+    width: 100vw;
+    min-height: 100vh;
+
+    .mk-works-container {
+        width: 100%;
+        max-width: 700px;
+        padding: 100px 0;
+        margin: auto;
+
+
+        .mk-works-tab {
+            display: flex;
+
+            .mk-works-left-border {
+                width: 2px;
+                border-radius: $defaultBorder;
+                background-color: $themeColor2;
+
+                .mk-works-left-border-selection {
+                    width: 100%;
+                    height: 42px;
+                    background-color: $themeColor4;
+                    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+                }
+            }
+
+            .mk-works-tab-left {
+
+                .mk-works-tab-left-button {
+                    width: 100%;
+                    padding: 10px 20px 10px 10px;
+                    white-space: nowrap;
+                    font-size: 14px;
+                    line-height: 14px;
+                    height: 42px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    cursor: pointer;
+                    color: $themeColor3;
+                }
+
+                .mk-works-tab-left-button-selected {
+                    color: $themeColor4;
+                }
+
+            }
+
+            .mk-works-tab-right {
+                flex: 1;
+                color: $themeColor3;
+
+                .mk-works-tab-right-title {
+                    margin-bottom: 2px;
+                    font-size: 22px;
+                    font-weight: 600;
+                    line-height: 1.3;
+                }
+
+                .mk-works-tab-right-duration {
+                    margin-bottom: 20px;
+                    font-size: 13px;
+                }
+
+                .mk-works-tab-right-list {
+                    .mk-works-tab-right-list-item {
+                        margin-bottom: 10px;
+                        font-size: 14px;
+                        padding-left: 25px;
+                        line-height: 20px;
+
+                        &::before {
+                            content: "▹";
+                            color: $themeColor4;
+                            font-size: 18px;
+                            line-height: 18px;
+                            position: absolute;
+                            margin-left: -25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

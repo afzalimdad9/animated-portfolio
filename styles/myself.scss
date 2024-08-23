@@ -1,0 +1,78 @@
+@import './theme.scss';
+
+.mk-myself {
+    width: 100vw;
+
+    .mk-myself-settings-icon {
+        svg {
+            width: 30vw;
+            height: 100%;
+            min-width: 250px;
+            fill: $themeColor4;
+            opacity: 0.2;
+        }
+
+        position: absolute;
+        left: 5%;
+        margin-top: 500px;
+    }
+
+    .mk-myself-container {
+        max-width: 900px;
+        margin: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 100px 0 100px 0;
+
+        .mk-myself-paragraph {
+            margin: 0px 0px 15px;
+            font-size: 16px;
+            line-height: 24px;
+            color: $themeColor3;
+        }
+
+        .mk-myself-skill {
+            color: $themeColor4;
+            font-size: 12px;
+            margin-bottom: 10px;
+            line-height: 24px;
+
+            &::before {
+                content: "▹";
+                color: $themeColor3;
+                font-size: 14px;
+                line-height: 12px;
+                margin-right: 10px;
+            }
+        }
+
+        .mk-myself-profile-wrapper {}
+
+        .mk-myself-profile-parent {
+            max-width: 300px;
+            max-height: 300px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mk-myself-profile {
+            max-width: 300px;
+            width: 100%;
+
+        }
+
+
+        @media only screen and (max-width: 800px) {
+
+            .mk-myself-profile-parent {
+                max-width: 250px;
+            }
+
+            .mk-myself-profile {
+                max-width: 250px;
+            }
+        }
+    }
+}

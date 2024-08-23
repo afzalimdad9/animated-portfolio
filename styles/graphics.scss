@@ -1,0 +1,63 @@
+@import './theme.scss';
+
+.mk-graphics {
+    width: 100vw;
+    min-height: 100vh;
+
+    .mk-graphics-top-background {
+        height: 400px;
+        background-color: $themeColor3;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+    }
+
+    .mk-graphics-container {
+        max-width: 900px;
+        margin: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 100px 0 100px 0;
+        position: relative;
+
+        .mk-single-image-container {
+            width: 100%;
+            border-radius: $defaultBorder;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+
+
+        filter: grayscale(1);
+        mix-blend-mode: multiply;
+        }
+
+    }
+}
+
+
+.mk-hover-color {
+    position: relative;
+
+    .mk-hover-color-filter {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-color: $themeColor2;
+        border-radius: $defaultBorder;
+        transition: $allTransitoin3s;
+    }
+
+        &:hover {
+            .mk-single-image-container {
+                filter: grayscale(0);
+                mix-blend-mode: normal;
+        transition: $allTransitoin3s;
+
+            }
+
+        }
+}

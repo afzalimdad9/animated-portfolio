@@ -1,0 +1,113 @@
+@import './theme.scss';
+
+.mk-projects {
+    width: 100vw;
+    min-height: 100vh;
+    
+
+    .mk-projects-container {
+        max-width: 1000px;
+        padding: 100px 0;
+        margin: auto;
+        min-height: 100vh;
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        .mk-projects-single {
+            margin: 0 0 100px 0;
+        }
+
+
+        .blank {
+            width: 100%;
+            height: 50px;
+        }
+
+        .mk-projects-image-container {
+            width: 120%;
+            box-shadow: 0 10px 30px -15px $themeColor2;
+
+            .mk-image {
+                width: 100%;
+            }
+
+            .mk-taskbar {
+                background-color: $themeColor2;
+            }
+        }
+
+        .mk-projects-image-container-right {
+            margin-left: -20%;
+        }
+
+
+        .mk-projects-text-side {
+            max-width: 100%;
+            color: $themeColor3;
+
+            .mk-projects-text-featured {
+                margin: 10px 0px;
+                color: $themeColor4;
+                font-size: 13px;
+                font-weight: 400;
+            }
+
+            .mk-projects-text-title {
+                margin: 0px 0px 20px;
+                font-size: clamp(24px, 5vw, 28px);
+                font-weight: 600;
+                line-height: 1;
+            }
+
+            .mk-projects-text-description {
+                box-shadow: 0 10px 30px -15px $themeColor2;
+                position: relative;
+                padding: 25px;
+                border-radius: $defaultBorder;
+                background-color: $themeColor2;
+                color: $themeColor4;
+                font-size: 14px;
+
+                display: flex;
+                flex-direction: column;
+
+                .mk-text-image-container {
+                    width: 100%;
+                    box-shadow: 0 10px 30px -15px $themeColor1;
+
+                    .mk-image {
+                        width: 100%;
+                    }
+
+                    .mk-taskbar {
+                        background-color: $themeColor1;
+                    }
+
+                }
+            }
+
+            .mk-projects-text-tecs {
+                margin: 25px 0px 10px;
+                line-height: 1;
+                font-size: 13px;
+            }
+        }
+
+        .mk-projects-text-side-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .mk-projects-text-side-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+    }
+}

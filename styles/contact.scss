@@ -1,0 +1,81 @@
+@import './theme.scss';
+
+
+.mk-contact {
+    width: 100vw;
+
+    .mk-contact-zebra-img {
+        height: 150px;
+        width: 1000%;
+        background-size: contain;
+        margin: 100px 0 50px 0%;
+
+        img {
+            fill: blue;
+            color: yellow;
+        }
+    }
+
+    .mk-contact-box {
+        background-color: $themeColor2;
+        text-align: center;
+
+        .mk-contact-box-width {
+            max-width: 600px;
+            padding: 100px 0 20px 0;
+        }
+
+        .mk-contact-label {
+            font-size: clamp(15px, 2vw, 20px);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: $themeColor4;
+        }
+
+        .mk-contact-title {
+            font-size: clamp(35px, 5vw, 50px);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: $themeColor3;
+
+        }
+
+        .mk-contact-text {
+            font-size: clamp(15px, 2vw, 20px);
+            line-height: 1.5;
+            color: $themeColor3;
+        }
+
+        .mk-contact-button {
+            margin-top: 50px;
+        }
+    }
+
+    .mk-contact-git-section {
+        margin-top: 130px;
+        font-size: 14px;
+        color: $themeColor3;
+        line-height: 1.5;
+        font-weight: 600;
+        cursor: pointer;
+
+        svg {
+            stroke: $themeColor3;
+            width: 14px;
+        }
+
+        span {
+            margin: 0 5px;
+        }
+
+        &:hover {
+        color: $themeColor4;
+
+        svg {
+            stroke: $themeColor4;
+        }
+        }
+    }
+
+}

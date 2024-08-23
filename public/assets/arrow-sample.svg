@@ -1,0 +1,10 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 300" width="180" height="300">
+	<title>arrow-sample</title>
+	<style>
+		.s1 { fill: #f7c873; }
+		.s0 { fill: #434343; }
+	</style>
+	<path id="Shape 1" class="s0" d="m15 0h58l86 149-87 149h-58l86-149z"/>
+	<path id="Layer 1" class="s1" d="m163 0l16 27 2 3v237l-18 31h-59l76-132.5v-31.7l-77-133.8z"/>
+	<path id="Shape 2" class="s1" d="m0 29l70 120-70 121v-101l12-20-12-18z"/>
+</svg>

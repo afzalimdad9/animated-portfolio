@@ -1,0 +1,56 @@
+@import './theme.scss';
+
+.mk-side-elements {
+
+    @media only screen and (max-width: 800px) {
+        display: none;
+
+    }
+
+    .mk-side-elements-container {
+        position: fixed;
+        bottom: 0;
+        z-index: 1;
+
+        .mk-side-elements-item {
+            margin: 20px 0;
+            cursor: pointer;
+
+            svg {
+                stroke: $themeColor3;
+            }
+
+            .mk-side-elements-text {
+                color: $themeColor3;
+                letter-spacing: 2px;
+                writing-mode: vertical-rl;
+            }
+
+            &:hover {
+                svg {
+                    stroke: $themeColor4;
+                }
+
+                .mk-side-elements-text {
+                    color: $themeColor4;
+                }
+            }
+        }
+
+        .mk-side-elements-line {
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 10px auto 0 auto;
+            background-color: $themeColor3;
+        }
+    }
+
+    .mk-side-elements-left {
+        left: 2.5%;
+    }
+
+    .mk-side-elements-right {
+        right: 2.5%;
+    }
+}

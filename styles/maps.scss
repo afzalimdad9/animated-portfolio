@@ -1,0 +1,78 @@
+@import './theme.scss';
+
+.mk-maps {
+    width: 100vw;
+    min-height: 100vh;
+
+    .mk-maps-container {
+        max-width: 700px;
+        width: 100%;
+        padding: 100px 0;
+        margin: auto;
+        flex: 1;
+
+        .mk-box {
+            background-color: $themeColor2;
+            width: 100%;
+            height: auto;
+            padding: 8%;
+            border-radius: $defaultBorder;
+
+            .mk-box-heading {
+                // margin-bottom: 12px;
+                font-size: clamp(20px, 6vw, 30px);
+                font-weight: 700;
+                // line-height: 1;
+                line-height: 1.5;
+                color: $themeColor3;
+            }
+
+            .mk-box-subheading {
+
+                // margin-bottom: 20px;
+                font-size: clamp(14px, 4vw, 18px);
+                font-weight: 500;
+                line-height: 1.5;
+                color: $themeColor4;
+
+            }
+
+
+            .mk-box-para {
+
+                // margin-bottom: 20px;
+                font-size: clamp(14px, 6vw, 16px);
+                font-weight: 400;
+                line-height: 1.5;
+                color: $themeColor4;
+                margin-top: 4%;
+
+            }
+
+            .mk-box-iframe-wrapper {
+                position: relative;
+                padding-bottom: 56.25%;
+                /* 16:9 */
+                height: 0;
+                margin-top: 8%;
+
+                .mk-box-iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+            }
+
+
+        }
+
+        .mk-gsv-logo {
+            width: 100%;
+        }
+
+
+    }
+}

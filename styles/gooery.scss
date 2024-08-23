@@ -1,0 +1,86 @@
+@import './theme.scss';
+
+:root {
+  --circleDividant: 8;
+
+  @media only screen and (max-width: 800px) {
+    --circleDividant: 3;
+  }
+}
+
+$circleDividant: var(--circleDividant);
+
+.mk-gooery {
+  .hooks-main {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .b1,
+  .b2,
+  .b3 {
+    position: absolute;
+    will-change: transform;
+    border-radius: 50%;
+    background-color: $themeColor2;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    opacity: 0.6;
+  }
+
+
+  .b1 {
+    width: calc(170vw/$circleDividant);
+    height: calc(170vw/$circleDividant);
+  }
+
+  .b2 {
+    width: calc(350vw/$circleDividant);
+    height: calc(350vw/$circleDividant);
+  }
+
+  .b3 {
+    width: calc(200vw/$circleDividant);
+    height: calc(200vw/$circleDividant);
+  }
+
+
+  .b1::after,
+  .b2::after,
+  .b3::after {
+    content: '';
+    position: absolute;
+    top: calc(50vw/$circleDividant);
+    left: calc(50vw/$circleDividant);
+    width: calc(50vw/$circleDividant);
+    height: calc(50vw/$circleDividant);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .b2::after {
+    top: calc(7vw/$circleDividant);
+    left: calc(7vw/$circleDividant);
+    width: calc(7vw/$circleDividant);
+    height: calc(7vw/$circleDividant);
+  }
+
+  .b3::after {
+    top: calc(50vw/$circleDividant);
+    left: calc(50vw/$circleDividant);
+    width: calc(50vw/$circleDividant);
+    height: calc(50vw/$circleDividant);
+  }
+
+  .hooks-filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: url('#goo');
+    overflow: hidden;
+  }
+
+}

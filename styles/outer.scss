@@ -1,0 +1,53 @@
+@import './theme.scss';
+
+.mk-outer {
+    .mk-outer-container {
+        height: 100vh;
+
+        .mk-outer-text {
+            position: absolute;
+            z-index: 1;
+
+            .mk-outer-my-name {
+                margin: 0px 0px 30px 4px;
+                // color: var(--themeColor4);
+                font-size: clamp(14px, 5vw, 16px);
+                font-weight: 600;
+                line-height: 1;
+            }
+
+            .mk-outer-heading {
+                font-size: clamp(40px, 8vw, 80px);
+                font-weight: 700;
+                color: $themeColor3;
+                line-height: 1;
+            }
+
+            .mk-outer-heading2 {
+                font-size: clamp(20px, 4vw, 40px);
+                font-weight: 600;
+                line-height: 1.5;
+                color: $themeColor4;
+            }
+
+            .mk-outer-description {
+                margin: 20px 0px 0px;
+                max-width: 540px;
+                color: $themeColor3;
+            }
+
+            .mk-outer-contact {
+                margin-top: 50px;
+            }
+        }
+
+    }
+
+    .mk-outer-gooery {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        flex: 1;
+    }
+}

@@ -1,0 +1,59 @@
+@import './theme.scss';
+
+
+.mk-window-screen {
+    border-radius: $defaultBorder;
+    overflow: hidden;
+
+    .mk-taskbar {
+        // height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        $circleSize: 12px;
+
+        .mk-circles {
+            display: flex;
+        }
+
+        .mk-circle {
+            width: $circleSize;
+            height: $circleSize;
+            margin: 0 5px;
+            border-radius: 50%;
+        }
+
+        .mk-circle1 {
+            background-color: #ef4444;
+        }
+
+        .mk-circle2 {
+            background-color: #f59e0b;
+        }
+
+        .mk-circle3 {
+            background-color: #10b981;
+        }
+
+        .mk-url {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            .mk-url-box {
+                background-color: #00000030;
+                font-size: 14px;
+                padding: 5px;
+                width: 70%;
+                text-align: center;
+                border-radius: $defaultBorder;
+                color: #ffffff60;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
