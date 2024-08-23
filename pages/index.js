@@ -1,7 +1,7 @@
 import { ParallaxProvider } from "react-scroll-parallax";
 import Contact from "../views/Contact";
 import FullPageScroll from "../components/FullPageScroll";
-import Graphis from "../views/Graphis";
+// import Graphis from "../views/Graphis";
 import Header from "../components/Header";
 import MapsContribution from "../views/MapsContribution";
 import MySelf from "../views/MySelf";
@@ -17,6 +17,7 @@ import Cursor from "../components/Cursor";
 import PreLoader from "../components/PreLoader";
 import Certifications from "../views/Certifications";
 import certifications from "../utils/certifications";
+import WaterMark from "../components/WaterMark";
 
 const ViewElement = ({ children, id }) => (
   <div id={id} className="view-element">{children}</div>
@@ -25,7 +26,6 @@ const ViewElement = ({ children, id }) => (
 export default function Home() {
   return (
     <>
-
       <PreLoader />
 
       <Cursor />
@@ -75,6 +75,7 @@ export default function Home() {
           <Contact data={contact} />
         </ViewElement>
 
+        <WaterMark />
       </ParallaxProvider>
     </>
   )
