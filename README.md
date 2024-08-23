@@ -9,7 +9,10 @@
   <a href="http://mk-portfolio-stage.s3-website.ap-south-1.amazonaws.com/" target="_blank">Personal Portfolio</a>
 </p>
 
-![demo](./public/assets/portfolio.gif)
+<div align="center">
+  <img src="./public/assets/portfolio.gif" alt="Portfolio Demo" width="100%" />
+  <br>
+</div>
 
 ## 🚨 Forking & Contributing
 
