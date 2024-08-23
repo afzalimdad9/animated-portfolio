@@ -38,18 +38,24 @@ const getAnimationData = ({
     }
 }
 
-
 const Text = ({ text, index, clinet, via }) => {
     const parallaxRef = useRef()
     const [startScroll, setStartScroll] = useState(0)
     const [endScroll, setEndScroll] = useState(0)
     useEffect(() => {
+        window.addEventListener("resize", setPositions);
+        setTimeout(() => {
+            setPositions()
+        }, 3000);
+    }, [])
+    
+    const setPositions = () => {
         const innerHeight = window.innerHeight;
         const currentRef = parallaxRef?.current;
         const startPossition = currentRef.getBoundingClientRect().top + window.scrollY + 150;
         setStartScroll(startPossition - innerHeight)
         setEndScroll(startPossition + innerHeight)
-    }, [])
+    }
 
     const { scale, translateX, alignSelf, rotate, theme } = getAnimationData({
         text,
