@@ -46,6 +46,14 @@
         @media only screen and (max-width: 768px) {
             width: 90%;
         }
+
+        .mk-logo-bg {
+            display: flex;
+            background: $themeColor4;
+            border-radius: 50%;
+            overflow: hidden;
+            // border: 2px solid $themeColor3;
+        }
     }
 
     .mk-header-list {

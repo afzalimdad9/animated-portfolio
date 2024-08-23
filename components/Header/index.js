@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import MK from '../SVGs/MK'
 import Hamburger from '../SVGs/Hamburger'
 import CurvedText from '../CurvedText';
+import Image from 'next/image';
 
 const getMenuItemOpacity = ({ menus, i }) => {
     const length = (menus || []).length;
@@ -53,7 +54,7 @@ const HamburgerBody = ({ menus, handleItemSelect }) => (
     </div>
 )
 
-const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn } }) => {
+const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, logo } }) => {
 
     const [menuVisibled, handleVisibleMenu] = useState(false);
 
@@ -63,7 +64,13 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn } }
         <header className='mk-header'>
             <div className='mk-header-container'>
                 <div>
-                    <MK onClick={handleIconClick} width={45} height={45} />
+                    {!logo?.src ? (
+                        <MK onClick={handleIconClick} width={45} height={45} />
+                    ) : (
+                        <div onClick={handleIconClick} className='mk-logo-bg'>
+                            <Image width={60} height={60} src={logo.src} alt={logo.alt} />
+                        </div>
+                    )}
                 </div>
                 <div className='d-flex'>
                     {rightBtn && (

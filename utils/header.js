@@ -16,6 +16,10 @@ const header = {
         label: 'Curriculum Vitae | CV',
         onClick: () => openLink('assets/cv.pdf')
     },
+    logo: {
+        src: '/assets/photo-logo.png',
+        alt: 'muneebwasikhan'
+    },
     handleIconClick: () => scrollTo('home'),
     handleItemSelect: (menu) => scrollTo(menu.id),
 }
