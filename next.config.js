@@ -4,7 +4,9 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     images: {
-        unoptimized: true
+      loader: 'imgix',
+      path: 'public/assets/portfolio.gif',
+      unoptimized: true,
     }
 }
 }
