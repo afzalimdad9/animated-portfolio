@@ -19,7 +19,7 @@ const Contact = ({ data: {
     });
 
     useEffect(() => {
-        fetch('https://api.github.com/repos/Muneebwasikhan/portfolio')
+        fetch('https://api.github.com/repos/afzalimdad9/animated-portfolio')
             .then(response => response.json())
             .then(json => {
                 const { stargazers_count, forks_count } = json;
@@ -36,27 +36,27 @@ const Contact = ({ data: {
         translateX: [-50, 0]
     });
     return (
-        <div className='mk-contact'>
+        <div className='ai-contact'>
             <div
                 ref={ref}
-                className='mk-contact-zebra-img'
+                className='ai-contact-zebra-img'
                 style={{
                     backgroundImage: `url(${'/assets/arrow-sample.svg'})`,
                 }}>
 
             </div>
-            <div className='mk-contact-box'>
+            <div className='ai-contact-box'>
                 <div className='container flex-center flex-column'>
-                    <div className='mk-contact-box-width'>
-                        <div className='mk-contact-label'>{label}</div>
-                        <div className='mk-contact-title'>{heading} </div>
-                        <div className='mk-contact-text'>{description}</div>
-                        <div className='mk-contact-button'>
-                            <button onClick={button?.onClick} className='mk-button'>
+                    <div className='ai-contact-box-width'>
+                        <div className='ai-contact-label'>{label}</div>
+                        <div className='ai-contact-title'>{heading} </div>
+                        <div className='ai-contact-text'>{description}</div>
+                        <div className='ai-contact-button'>
+                            <button onClick={button?.onClick} className='ai-button'>
                                 {button?.label}
                             </button>
                         </div>
-                        <div onClick={handleBuiltByClick} className='mk-contact-git-section'>
+                        <div onClick={handleBuiltByClick} className='ai-contact-git-section'>
                             <div>{designAndBuiltBy}</div>
                             {!!(githubInfo.stars && githubInfo.forks) && (
                                 <div>

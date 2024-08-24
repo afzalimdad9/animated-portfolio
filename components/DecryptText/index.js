@@ -1,10 +1,5 @@
 import { useEffect } from 'react'
-import PropTypes from 'prop-types'
-
-
 import { useDencrypt } from "use-dencrypt-effect";
-
-// const values = ["useDencrypt", "Customizable", "React Hook", "Text Effect"];
 
 const DecryptText = ({
     values = ['Empty'],

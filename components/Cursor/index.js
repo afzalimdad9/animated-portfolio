@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import AnimatedCursor from 'react-animated-cursor';
 import dynamic from 'next/dynamic';
 
 const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
@@ -13,7 +12,6 @@ function Cursor() {
 
   useEffect(() => {
     window.addEventListener("mousemove", mouseMove);
-    // scrollColor()
   }, []);
 
   function mouseMove(e) {
@@ -25,27 +23,15 @@ function Cursor() {
     <div
     >
       <div
-        // onClick={(event) => {
-        //   // event.preventDefault();
-        //   console.log('clicking')
-        // }}
         style={{
-            // top: y+500,
-            // left: x-500,
-            top: y,
-            left: x,
-          }}
-        className='mk-cursor-line-box'
+          top: y,
+          left: x,
+        }}
+        className='ai-cursor-line-box'
       >
-        {/* <div
-          className='mk-cursor-line mk-cursor-line1' /> */}
-          <div className='mk-cursor-line-right-1' />
-          {/* <div className='mk-cursor-line-right-2' /> */}
+        <div className='ai-cursor-line-right-1' />
 
-          <div className='mk-cursor-line-bottom-1' />
-          {/* <div className='mk-cursor-line-bottom-2' /> */}
-        {/* <div */}
-          {/* // className='mk-cursor-line mk-cursor-line2' /> */}
+        <div className='ai-cursor-line-bottom-1' />
       </div>
       <AnimatedCursor
         innerSize={4}

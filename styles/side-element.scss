@@ -1,56 +1,54 @@
-@import './theme.scss';
+@import "./theme.scss";
 
-.mk-side-elements {
+.ai-side-elements {
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
 
-    @media only screen and (max-width: 800px) {
-        display: none;
+  .ai-side-elements-container {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
 
-    }
+    .ai-side-elements-item {
+      margin: 20px 0;
+      cursor: pointer;
 
-    .mk-side-elements-container {
-        position: fixed;
-        bottom: 0;
-        z-index: 1;
+      svg {
+        stroke: $themeColor3;
+      }
 
-        .mk-side-elements-item {
-            margin: 20px 0;
-            cursor: pointer;
+      .ai-side-elements-text {
+        color: $themeColor3;
+        letter-spacing: 2px;
+        writing-mode: vertical-rl;
+      }
 
-            svg {
-                stroke: $themeColor3;
-            }
-
-            .mk-side-elements-text {
-                color: $themeColor3;
-                letter-spacing: 2px;
-                writing-mode: vertical-rl;
-            }
-
-            &:hover {
-                svg {
-                    stroke: $themeColor4;
-                }
-
-                .mk-side-elements-text {
-                    color: $themeColor4;
-                }
-            }
+      &:hover {
+        svg {
+          stroke: $themeColor4;
         }
 
-        .mk-side-elements-line {
-            display: block;
-            width: 1px;
-            height: 90px;
-            margin: 10px auto 0 auto;
-            background-color: $themeColor3;
+        .ai-side-elements-text {
+          color: $themeColor4;
         }
+      }
     }
 
-    .mk-side-elements-left {
-        left: 2.5%;
+    .ai-side-elements-line {
+      display: block;
+      width: 1px;
+      height: 90px;
+      margin: 10px auto 0 auto;
+      background-color: $themeColor3;
     }
+  }
 
-    .mk-side-elements-right {
-        right: 2.5%;
-    }
+  .ai-side-elements-left {
+    left: 2.5%;
+  }
+
+  .ai-side-elements-right {
+    right: 2.5%;
+  }
 }

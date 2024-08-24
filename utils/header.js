@@ -4,12 +4,12 @@ import { openLink, scrollTo } from "./methods";
 const header = {
     menus: [
         { title: 'Home', id: 'home' },
-        { title: 'My Selft', id: 'my-self' },
+        { title: 'My Self', id: 'my-self' },
         { title: 'Experience', id: 'experience' },
         { title: 'My Work', id: 'my-work' },
         { title: 'Reviews', id: 'reviews' },
         { title: 'Certifications', id: 'certifications' },
-        { title: 'Contribution', id: 'contributions' },
+        // { title: 'Contribution', id: 'contributions' },
         { title: 'Contact', id: 'contact' },
     ],
     rightBtn: {
@@ -17,8 +17,8 @@ const header = {
         onClick: () => openLink('assets/cv.pdf')
     },
     logo: {
-        src: '/assets/photo-logo.png',
-        alt: 'muneebwasikhan'
+        src: '/assets/profile.jpg',
+        alt: 'afzalimdad9'
     },
     handleIconClick: () => scrollTo('home'),
     handleItemSelect: (menu) => scrollTo(menu.id),

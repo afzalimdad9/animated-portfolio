@@ -7,7 +7,7 @@ const certifications = {
             size: 1,
             title: 'DevOps on AWS Specialization',
             platform: 'Coursera',
-            link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/YERB6BVPD2YS',
+            link: '',
             date: 'Issued Sep 2022 · No Expiration Date',
             logo: '/assets/aws.png',
             aos: 'zoom-out-left'
@@ -16,7 +16,7 @@ const certifications = {
             size: 1,
             title: 'Docker for absolute beginners',
             platform: 'Coursera',
-            link: 'https://www.coursera.org/account/accomplishments/certificate/BT5THPADCSJN',
+            link: '',
             date: 'Issued Sep 2022 · No Expiration Date',
             logo: '/assets/docker.png',
             aos: 'zoom-out-right'
@@ -25,7 +25,7 @@ const certifications = {
             size: 1,
             title: 'AWS Cloud Technical Essentials',
             platform: 'Coursera',
-            link: 'https://www.coursera.org/account/accomplishments/certificate/24NSC9PMXLGT',
+            link: '',
             date: 'Issued Aug 2022 · No Expiration Date',
             logo: '/assets/aws.png',
             aos: 'zoom-out-left'

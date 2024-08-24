@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import MuneebKhan from '../MuneebKhan';
+import AfzalImdad from '../AfzalImdad';
 
 const PreLoader = () => {
     const [loader, handleLoader] = useState(true);
@@ -12,10 +12,10 @@ const PreLoader = () => {
     }, [])
 
     return (
-        <div className={`mk-pre-loader ${loader ? 'mk-pre-loader-enabled' : 'mk-pre-loader-disabled'}`}>
-            <div className='mk-pre-loader-boarder' />
-            <div className='mk-pre-loader-container'>
-                <MuneebKhan />
+        <div className={`ai-pre-loader ${loader ? 'ai-pre-loader-enabled' : 'ai-pre-loader-disabled'}`}>
+            <div className='ai-pre-loader-boarder' />
+            <div className='ai-pre-loader-container'>
+                <AfzalImdad />
             </div>
         </div>
     )

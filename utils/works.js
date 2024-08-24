@@ -2,65 +2,55 @@ const works = {
     heading: 'My Work Experiences',
     experiences: [
         {
-            company: 'Digital Marknadsplan',
-            role: 'Full Stack Developer',
-            duration: 'Remote-Job | May 2020 - Present',
-            points: [
-                `A Swedish based Company hired my developers crew where we gave the
-    most part of our development from just React till the road of Nodejs,
-    GraphQL, Apollo and many more techs.`,
-            ],
+            company: 'Cubicus.io',
+            jobs: [
+                {
+                    role: 'Sr. Full Stack Developer',
+                    duration: 'Onsite | Jan 2023 - Aug 2024',
+                    points: [
+                        `In my role as a Full Stack Engineer at Cubicus.io, I engineered comprehensive solutions, seamlessly integrating frontend and backend technologies to create a cohesive user experience.`,
+                        "Collaborating with a dynamic team, I played a key role in driving innovation and ensuring the success of projects at Cubicus.io.",
+                        'Employing a versatile skill set, I contributed to the development of scalable applications and implemented robust server-side functionalities.'
+                    ],
+                },
+                {
+                    role: 'Project Manager',
+                    duration: 'Onsite | Dec 2023 - Feb 2024',
+                    points: [
+                        `Spearheaded the planning and execution of multiple software development projects, ensuring alignment with Cubicus.io's strategic goals and delivering projects on time and within budget.`,
+                        "Managed and coordinated cross-functional teams, fostering collaboration between developers, designers, and stakeholders to achieve project milestones and maintain high standards of quality.",
+                        'Proactively identified potential risks and bottlenecks, implementing effective mitigation strategies and problem-solving approaches to keep projects on track and ensure successful outcomes.'
+                    ],
+                }
+            ]
         },
         {
-            company: 'Daily Cart',
-            role: 'Co Founder',
-            duration: 'Onsite | Jun 2019 - Jun 2021',
-            points: [
-                `My First startup in which we developed Daily Cart App, My Role was
-                developing whole technical side like Web, Mobile Android/IOS, server,
-                And there were many Applications such as User Mobile App, Vendor App,
-                Rider App, User web, Admin Panel, So by hiring one more Developer I
-                made those all things done in one n half year.`,
-            ],
+            company: 'OneGrid',
+            jobs: [
+                {
+                    role: 'Sr. Full Stack Developer',
+                    duration: 'Remote Job | Dec 2022 - Oct 2023',
+                    points: [
+                        `As a Full Stack Developer at Onegrid, I spearheaded end-to-end development projects, seamlessly bridging the gap between frontend and backend functionalities.`,
+                        "Collaborating within an agile environment, I successfully delivered scalable and efficient web applications, contributing to Onegrid's commitment to technological excellence.",
+                        'My responsibilities included architecting robust server-side solutions and crafting dynamic user interfaces to optimize the overall system performance.'
+                    ],
+                },
+            ]
         },
         {
-            company: 'Upwork & Fiver',
-            role: 'Full Stack Developer',
-            duration: 'Remote | Jan 2019 - May 2020',
-            points: [
-                `Worked as a freelancer on Upwork & Fiver for more than 1.5 year and
-                worked on countless projects every time with new competition and tech
-                including blockchain and Javascript.`,
-            ],
-        },
-        {
-            company: 'PIAIC',
-            role: 'Teaching Assistant',
-            duration: 'Onsite | Sep 2018 - Jan 2019',
-            points: [
-                'Cloud Computing Teacher at PIAIC for 4 months roughly',
-                'Main Courses I was assisting were - Web Development & Cloud Computing',
-
-            ],
-        },
-        {
-            company: 'Panacloud',
-            role: 'MERN Developer',
-            duration: 'Onsite | Sep 2018 - Mar 2019',
-            points: [
-                `Worked for almost 8 months with the most efficient team. There I got
-                experience on working on Pakistan’s Presidential Program PIAIC I’m
-                from the base developers of that Program.`,
-            ],
-        },
-        {
-            company: 'Mantra Solutions',
-            role: 'Junior Developer',
-            duration: 'Onsite | Jul 2018 - Nov 2018',
-            points: [
-                `I worked there for almost 5 months as Hybrid Mobile Application
-                Development on Ionic/Cordova`,
-            ],
+            company: 'SenseFlow Pvt Ltd',
+            jobs: [
+                {
+                    role: 'Frontend Developer',
+                    duration: 'Onsite | Dec 2020 - Jan 2021',
+                    points: [
+                        `As a Frontend Developer at Senseflow, I led the implementation of innovative and responsive user interfaces, enhancing the overall user experience.`,
+                        "Collaborating closely with cross-functional teams, I played a pivotal role in translating design concepts into functional and visually appealing web applications.",
+                        'Through my proficiency in modern frontend technologies, I contributed to the seamless integration of cutting-edge features, ensuring a user-centric approach to development at Senseflow.'
+                    ],
+                }
+            ]
         },
     ]
 }

@@ -2,7 +2,7 @@ const mySelf = {
     heading: 'My Portfolio',
     paragraphs: [
         `
-        Hello! My name is Muneeb Khan, I like creating new things for internet. From a younger age, I have been interested in programming, as a kid most of my time I've spent in inspect element playing with colors and codes generating loops for sending infinite messages, cracking locked screen overflows and many more. so finally at the age of 16 I decided to convert this passion into career.`,
+        Hello! My name is Afzal Imdad, I like creating new things for internet. From a younger age, I have been interested in programming, as a kid most of my time I've spent in inspect element playing with colors and codes generating loops for sending infinite messages, cracking locked screen overflows and many more. so finally at the age of 16 I decided to convert this passion into career.`,
         `
         It is a way to become more crafty with my ideas and explore the endless possibilities in the world of programming.`,
         `
@@ -37,7 +37,7 @@ const mySelf = {
         'PWA/SPA',
         'AWS',
     ],
-    image: '/assets/profile1.jpg',
+    image: '/assets/profile.jpg',
 }
 
 export default mySelf

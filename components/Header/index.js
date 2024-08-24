@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import MK from '../SVGs/MK'
+import ai from '../SVGs/AI'
 import Hamburger from '../SVGs/Hamburger'
 import CurvedText from '../CurvedText';
 import Image from 'next/image';
@@ -19,7 +18,7 @@ const HamburgerBody = ({ menus, handleItemSelect }) => (
             width: cbHeight((menus || []).length),
             height: cbHeight((menus || []).length),
         }}
-        className='mk-hamburger'>
+        className='ai-hamburger'>
         <div className="flex-center">
             {(menus || []).map((menu, i) => {
                 return (
@@ -34,10 +33,10 @@ const HamburgerBody = ({ menus, handleItemSelect }) => (
                                 zIndex: menus.length - i,
                             }}
                             onClick={() => handleItemSelect(menu, i)}
-                            className='mk-hamburger-item'
+                            className='ai-hamburger-item'
                         >
                             <div
-                                className='mk-hamburger-item-bg'
+                                className='ai-hamburger-item-bg'
                                 style={{
                                     opacity: getMenuItemOpacity({ menus, i })
                                 }}
@@ -61,13 +60,13 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, lo
     const onChangeMenu = () => handleVisibleMenu(!menuVisibled);
 
     return (
-        <header className='mk-header'>
-            <div className='mk-header-container'>
+        <header className='ai-header'>
+            <div className='ai-header-container'>
                 <div>
                     {!logo?.src ? (
-                        <MK onClick={handleIconClick} width={45} height={45} />
+                        <ai onClick={handleIconClick} width={45} height={45} />
                     ) : (
-                        <div onClick={handleIconClick} className='mk-logo-bg'>
+                        <div onClick={handleIconClick} className='ai-logo-bg'>
                             <Image width={60} height={60} src={logo.src} alt={logo.alt} />
                         </div>
                     )}
@@ -75,13 +74,13 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, lo
                 <div className='d-flex'>
                     {rightBtn && (
                         <div>
-                            <button onClick={rightBtn.onClick} className='mk-button-md mx-3 mx-lg-5'>
+                            <button onClick={rightBtn.onClick} className='ai-button-md mx-3 mx-lg-5'>
                                 {rightBtn.label}
                             </button>
                         </div>
                     )}
-                    <div className={`mk-header-menu ${menuVisibled && 'mk-header-menu-visible'}`}>
-                        <Hamburger className="mk-hamburger-icon" onClick={onChangeMenu} width={30} height={30} />
+                    <div className={`ai-header-menu ${menuVisibled && 'ai-header-menu-visible'}`}>
+                        <Hamburger className="ai-hamburger-icon" onClick={onChangeMenu} width={30} height={30} />
                         <HamburgerBody menus={menus} handleItemSelect={handleItemSelect} />
                     </div>
                 </div>

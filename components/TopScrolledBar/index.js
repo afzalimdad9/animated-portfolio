@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const TopScrolledBar = props => {
+const TopScrolledBar = () => {
 
     const [scrolled, setScrolled] = useState(0)
 
@@ -13,17 +13,17 @@ const TopScrolledBar = props => {
         const innerHeight = window.innerHeight;
         const height = window?.document?.documentElement?.scrollHeight;
         const currentLocation = window.pageYOffset;
-        const scrolled = (currentLocation/(height-innerHeight))*100 || 0;
+        const scrolled = (currentLocation / (height - innerHeight)) * 100 || 0;
         setScrolled(scrolled)
     }
 
     return (
-        <div className='mk-top-scrolled'>
-            <div className='mk-top-scrolled-highlight'
-            style={{
-                transform: `translateX(${-100 + scrolled}%)`
-            }}
-             />
+        <div className='ai-top-scrolled'>
+            <div className='ai-top-scrolled-highlight'
+                style={{
+                    transform: `translateX(${-100 + scrolled}%)`
+                }}
+            />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ViewsTitle from '../../components/ViewsTitle'
 
 const TabListItem = ({ text }) => (
-    <div className='mk-works-tab-right-list-item'>{text}</div>
+    <div className='ai-works-tab-right-list-item'>{text}</div>
 )
 
 const Tabs = ({ list }) => {
@@ -11,41 +11,41 @@ const Tabs = ({ list }) => {
     const seletedItem = list[selectedItemIndex]
     return (
         <div>
-            <div className='mk-works-tab'>
+            <div className='ai-works-tab'>
                 <div
-                    className='mk-works-left-border'>
+                    className='ai-works-left-border'>
                     <div
                         style={{
                             transform: `translateY(${selectedItemIndex * 42}px)`
-                        }} className='mk-works-left-border-selection' />
+                        }} className='ai-works-left-border-selection' />
                 </div>
-                <div className='mk-works-tab-left'>
+                <div className='ai-works-tab-left'>
                     {(list || []).map((item, i) => (
                         <div key={i} data-aos="zoom-in-left">
                             <div onClick={() => handleSelectItemIndex(i)}
-                                className={`mk-works-tab-left-button ${selectedItemIndex === i ? 'mk-works-tab-left-button-selected' : ''}`}
+                                className={`ai-works-tab-left-button ${selectedItemIndex === i ? 'ai-works-tab-left-button-selected' : ''}`}
                             >{item.company}</div>
                         </div>
                     ))}
                 </div>
-                <div className='mk-works-tab-right'>
-                    {seletedItem && (
+                <div className='ai-works-tab-right'>
+                    {seletedItem && seletedItem.jobs.map(selectedItem => (
                         <>
                             <div
                                 data-aos="zoom-in-right"
-                                className='mk-works-tab-right-title'>
-                                {`${seletedItem.role} @ ${seletedItem.company}`}
+                                className='ai-works-tab-right-title'>
+                                {`${selectedItem.role} @ ${seletedItem.company}`}
                             </div>
                             <div
-                                data-aos="zoom-in-right" className='mk-works-tab-right-duration'>{seletedItem.duration}</div>
+                                data-aos="zoom-in-right" className='ai-works-tab-right-duration'>{selectedItem.duration}</div>
                             <div
-                                data-aos="zoom-in-right" className='mk-works-tab-right-list'>
-                                {(seletedItem.points || []).map((text, i) => (
+                                data-aos="zoom-in-right" className='ai-works-tab-right-list'>
+                                {(selectedItem.points || []).map((text, i) => (
                                     <TabListItem key={i} text={text} />
                                 ))}
                             </div>
                         </>
-                    )}
+                   ))}
                 </div>
             </div>
         </div>
@@ -59,12 +59,12 @@ const Works = ({ data: {
 } }) => {
     return (
         <div
-            className='mk-works'>
+            className='ai-works'>
             <div className='container h100per-min100vh d-flex justify-content-center'>
                 <div
 
                     data-aos="fade-down-left"
-                    className='mk-works-container'>
+                    className='ai-works-container'>
                     <ViewsTitle
                         text={heading}
                     />

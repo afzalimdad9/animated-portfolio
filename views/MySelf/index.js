@@ -6,7 +6,7 @@ import Helm from '../../components/SVGs/Helm'
 import { useParallax } from 'react-scroll-parallax'
 
 const Paragraph = ({ text }) => (
-    <div data-aos="zoom-in-left" className='mk-myself-paragraph'>
+    <div data-aos="zoom-in-left" className='ai-myself-paragraph'>
         {text}
     </div>
 )
@@ -14,7 +14,7 @@ const Paragraph = ({ text }) => (
 const List = ({ items }) => (
     <div className='col'>
         {(items || []).map(item => (
-            <div data-aos="zoom-in-left" className='mk-myself-skill' key={item}>
+            <div data-aos="zoom-in-left" className='ai-myself-skill' key={item}>
                 {item}
             </div>
         ))}
@@ -22,7 +22,7 @@ const List = ({ items }) => (
 )
 
 const ListParent = ({ list1, list2 }) => (
-    <div className='mk-myself-list-parent row'>
+    <div className='ai-myself-list-parent row'>
         <List items={list1} />
         <List items={list2} />
     </div>
@@ -41,16 +41,16 @@ const MySelf = ({ data: {
         rotate: [0, (360 * 1)],
     });
     return (
-        <div className='mk-myself'>
+        <div className='ai-myself'>
             <div
                 ref={ref}
-                className='mk-myself-settings-icon'>
+                className='ai-myself-settings-icon'>
                 <Helm />
             </div>
             <div className='container'>
                 <div
                     data-aos="fade-down-left"
-                    className='mk-myself-container'>
+                    className='ai-myself-container'>
                     <ViewsTitle
                         text={heading}
                     />
@@ -72,12 +72,12 @@ const MySelf = ({ data: {
                         <div className='col-12 col-md-4 mt-5 mt-md-0'>
                             <div
                                 data-aos="zoom-in-right"
-                                className='mk-myself-profile-wrapper d-flex justify-content-center'>
+                                className='ai-myself-profile-wrapper d-flex justify-content-center'>
                                 <HoverImage
                                     showFilter
                                     showBorder
-                                    imageClassName='mk-myself-profile'
-                                    parentClassName='mk-myself-profile-parent'
+                                    imageClassName='ai-myself-profile'
+                                    parentClassName='ai-myself-profile-parent'
                                     src={image}
                                 // layout="fill"
                                 />

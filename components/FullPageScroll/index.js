@@ -54,36 +54,18 @@ const litePalettes = [
         layer3: '#FFD369',
         layer4: '#EEEEEE', 
     },
-    // {
-    //     layer1: '#CFF1EF',
-    //     layer2: '#FFFFFF',
-    //     layer3: '#FBCFFC',
-    //     layer4: '#BE79DF', // for graphics
-    // },
     {
         layer1: '#222831',
         layer2: '#EEEEEE',
         layer3: '#00ADB5',
         layer4: '#393E46', // sss
     },
-    // {
-    //     layer1: '#222831',
-    //     layer2: '#393E46',
-    //     layer3: '#00ADB5',
-    //     layer4: '#EEEEEE', // sss
-    // },
     {
         layer1: '#222831',
         layer2: '#393E46',
         layer3: '#00ADB5',
         layer4: '#EEEEEE', // sss
     },
-    // {
-    //     layer1: '#F6FAF7',
-    //     layer2: '#d8f3dc',
-    //     layer3: '#2d6a4f',
-    //     layer4: '#081c15', 
-    // },
     {
         layer1: '#F8F8F8',
         layer2: '#434343',
@@ -99,8 +81,6 @@ const litePalettes = [
 ];
 
 export const getPelettes = () => {
-    // if (palettes)
-    // return dartPalettes
     return litePalettes
 }
 

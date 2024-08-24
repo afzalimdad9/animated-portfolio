@@ -1,8 +1,5 @@
-// import React, { useEffect } from 'react'
-// import ReactDOM from 'react-dom'
 import { useEffect } from 'react'
 import { useSpring, animated as anim } from 'react-spring'
-// import './styles.css'
 
 const fast = { tension: 1200, friction: 40 }
 const slow = { mass: 10, tension: 200, friction: 50 }
@@ -17,7 +14,7 @@ export default function Gooery() {
   const [{ pos2 }] = useSpring({ pos2: pos1, config: slow })
   const [{ pos3 }] = useSpring({ pos3: pos2, config: slow })
   // Effect for fetching mouse coordinates
-  useEffect(  () => {
+  useEffect(() => {
     // "set" updates the first spring, the other springs are bound and will follow.
     // It won't cause a new render pass and the animated values down in the view
     // will still naturally reflect animated changes.
@@ -32,7 +29,7 @@ export default function Gooery() {
   // makes elements transient.
   return (
     <div
-     className='mk-gooery'>
+      className='ai-gooery'>
       <svg style={{ position: 'absolute', width: 0, height: 0 }}>
         <filter id="goo">
           <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="30" />

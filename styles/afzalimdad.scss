@@ -1,0 +1,105 @@
+@import "./theme.scss";
+
+// $ai-afzal-imdad-svg-transition: cubic-bezier(0.84, -0.35, 0.26, 1.08);
+$ai-afzal-imdad-svg-transition: cubic-bezier(0.82, 0.01, 1, 0.11);
+// $ai-afzal-imdad-svg-transition: cubic-bezier(1,-0.01, 0, 1);
+
+.ai-afzal-imdad {
+  // background-color: orange;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // max-height: 800px;
+  // max-width: 800px;
+  display: flex;
+  justify-content: center;
+  // height: 0;
+  transition: all 1000ms linear;
+  // transform: scale(0);
+
+  .ai-afzal-imdad-parallax {
+    // display: inline;
+    transform: scale(0);
+    // width: 100vw;
+    // height: 100vw;
+    // max-width: 800px;
+    // max-height: 800px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    // background-color: orange;
+  }
+
+  .ai_svg_M {
+    transform-origin: center top;
+    transition: all 100ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_U {
+    transform-origin: center bottom;
+    transition: all 200ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_N {
+    transform-origin: center top;
+    transition: all 300ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_E1 {
+    transform-origin: right top;
+    transition: all 400ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_E2 {
+    transform-origin: right top;
+    transition: all 500ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_B {
+    transform-origin: right top;
+    transition: all 600ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_K1 {
+    transform-origin: center bottom;
+    transition: all 1700ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_K2 {
+    transform-origin: right top;
+    transition: all 1800ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_K3 {
+    transform-origin: left top;
+    transition: all 1900ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_H {
+    transform-origin: left bottom;
+    transition: all 1000ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_A {
+    transform-origin: center bottom;
+    transition: all 1100ms $ai-afzal-imdad-svg-transition;
+  }
+  .ai_svg_N2 {
+    transform-origin: right bottom;
+    transition: all 1200ms $ai-afzal-imdad-svg-transition;
+  }
+
+  svg {
+    // fill: white;
+    // width: 100vw;
+    // height: 100vw;
+    // max-width: 800px;
+    // max-height: 800px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: auto;
+    // background-color: white;
+  }
+}
+
+.ai-afzal-imdad-visible {
+  // height: 100vw;
+  // transform: scale(1);
+
+  .ai-afzal-imdad-parallax {
+    transform: scale(1);
+    // transition: all 1s linear;
+  }
+}

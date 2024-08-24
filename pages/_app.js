@@ -23,7 +23,7 @@ import '/styles/reviews.scss'
 import '/styles/top-scrolled-bar.scss'
 import '/styles/contact.scss'
 import '/styles/cursor.scss'
-import '/styles/muneeb-khan.scss'
+import '/styles/afzalimdad.scss'
 import '/styles/pre-loader.scss'
 import '/styles/certifications.scss'
 

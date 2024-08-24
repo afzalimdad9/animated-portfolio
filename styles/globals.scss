@@ -1,11 +1,10 @@
-@import './theme.scss';
+@import "./theme.scss";
 
 html,
 body {
-
   padding: 0;
   margin: 0;
-  font-family: 'Quicksand', 'Montserrat', 'Source Code Pro', sans-serif;
+  font-family: "Quicksand", "Montserrat", "Source Code Pro", sans-serif;
 
   overflow-x: hidden;
   background-color: $themeColor1;
@@ -33,19 +32,18 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-radius: $defaultBorder;
   background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: $defaultBorder;
-  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
   background-color: $themeColor4;
 }
 
 * {
-
   box-sizing: border-box;
 
   -webkit-transition: $bcTransition1s;
@@ -84,14 +82,27 @@ a {
   flex: 1;
 }
 
-$variants: ("": ("font-size": 14px, "padding": 1.25rem 1.75rem),
-  "-lg": ("font-size": 14px, "padding": 1.25rem 1.75rem),
-  "-md": ("font-size": 13px, "padding": 0.75rem 1rem),
-  "-sm": ("font-size": 10px, "padding": 0.5rem 0.75rem));
+$variants: (
+  "": (
+    "font-size": 14px,
+    "padding": 1.25rem 1.75rem,
+  ),
+  "-lg": (
+    "font-size": 14px,
+    "padding": 1.25rem 1.75rem,
+  ),
+  "-md": (
+    "font-size": 13px,
+    "padding": 0.75rem 1rem,
+  ),
+  "-sm": (
+    "font-size": 10px,
+    "padding": 0.5rem 0.75rem,
+  ),
+);
 
-@each $name,
-$variant in $variants {
-  .mk-button#{$name} {
+@each $name, $variant in $variants {
+  .ai-button#{$name} {
     background-color: transparent;
     line-height: 1;
     border: 1px solid $themeColor4;
@@ -103,14 +114,14 @@ $variant in $variants {
     overflow: hidden;
     position: relative;
     text-decoration: none;
-    transition: .2s transform ease-in-out;
+    transition: 0.2s transform ease-in-out;
     will-change: transform;
     z-index: 0;
 
     &::after {
       background-color: $themeColor4;
       border-radius: 4px;
-      content: '';
+      content: "";
       display: block;
       height: 100%;
       width: 100%;
@@ -119,7 +130,7 @@ $variant in $variants {
       top: 0;
       transform: translate(-100%, 0) rotate(10deg);
       transform-origin: top left;
-      transition: .2s transform ease-out;
+      transition: 0.2s transform ease-out;
       will-change: transform;
       z-index: -1;
     }
@@ -135,9 +146,7 @@ $variant in $variants {
       will-change: transform;
     }
   }
-
 }
-
 
 .flex-center {
   display: flex;
@@ -145,7 +154,7 @@ $variant in $variants {
   align-items: center;
 }
 
-.mk-assets-hover-filter {
+.ai-assets-hover-filter {
   // background-color: orange;
   position: relative;
 
@@ -163,14 +172,11 @@ $variant in $variants {
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
-
   &:hover {
     filter: grayscale(0);
     mix-blend-mode: normal;
     transition: $allTransitoin3s;
-
   }
-
 }
 
 /* @media (prefers-color-scheme: dark) {

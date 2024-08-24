@@ -48,7 +48,7 @@ const Text = ({ text, index, clinet, via }) => {
             setPositions()
         }, 3000);
     }, [])
-    
+
     const setPositions = () => {
         const innerHeight = window.innerHeight;
         const currentRef = parallaxRef?.current;
@@ -77,11 +77,11 @@ const Text = ({ text, index, clinet, via }) => {
         >
             <div
                 ref={parallaxRef}
-                className={`mk-review-item-info mk-reviwe-color-${theme}-invert`}>
+                className={`ai-review-item-info ai-reviwe-color-${theme}-invert`}>
                 {clinet} via {via}
             </div>
             <div
-                className={`mk-review-item mk-reviwe-color-${theme}`}>
+                className={`ai-review-item ai-reviwe-color-${theme}`}>
                 {`"${text}"`}
             </div>
         </Parallax>
@@ -93,15 +93,15 @@ const Reviews = ({ data: {
     list
 } }) => {
     return (
-        <div className='mk-reviews'>
+        <div className='ai-reviews'>
             <div className='container'>
-                <div className='mk-reviews-container'>
+                <div className='ai-reviews-container'>
                     <ViewsTitle
                         text={heading}
                     />
                 </div>
             </div>
-            <div className='mk-reviews-list'>
+            <div className='ai-reviews-list'>
                 {(list || []).map((item, i) => (
                     <Text key={i}
                         index={i}

@@ -1,7 +1,6 @@
 import { ParallaxProvider } from "react-scroll-parallax";
 import Contact from "../views/Contact";
 import FullPageScroll from "../components/FullPageScroll";
-// import Graphis from "../views/Graphis";
 import Header from "../components/Header";
 import MapsContribution from "../views/MapsContribution";
 import MySelf from "../views/MySelf";
@@ -59,17 +58,17 @@ export default function Home() {
           <Reviews data={reviews} />
         </ViewElement>
 
-        {/* <ViewElement id="designs">
-          <Graphis data={graphics} />
-        </ViewElement> */}
-
         <ViewElement id="certifications">
           <Certifications data={certifications} />
         </ViewElement>
 
-        <ViewElement id="contributions">
+        {/* <ViewElement id="graphics">
+          <Graphics data={graphics} />
+        </ViewElement> */}
+
+        {/* <ViewElement id="contributions">
           <MapsContribution data={mapsContribution} />
-        </ViewElement>
+        </ViewElement> */}
 
         <ViewElement id="contact">
           <Contact data={contact} />

@@ -11,15 +11,15 @@ const SingleImageBox = ({ src, size, imageAlign }) => (
                 backgroundImage: `url(${src})`,
                 backgroundPosition: (imageAlign || 'center')
             }}
-            className='mk-single-image-container'>
+            className='ai-single-image-container'>
 
         </div>
     </HoverColorChanger>
 )
 
 const HoverColorChanger = ({ children, parentClassName, filterClassName }) => (
-    <div className={`mk-hover-color ${parentClassName}`}>
-        <div className={`mk-hover-color-filter ${filterClassName}`} />
+    <div className={`ai-hover-color ${parentClassName}`}>
+        <div className={`ai-hover-color-filter ${filterClassName}`} />
         {children}
     </div>
 )
@@ -39,10 +39,10 @@ const Graphis = ({ data: {
     list
 } }) => {
     return (
-        <div className='mk-graphics'>
+        <div className='ai-graphics'>
             <div className='container'>
-                <div className='mk-graphics-top-background' />
-                <div className='mk-graphics-container'>
+                <div className='ai-graphics-top-background' />
+                <div className='ai-graphics-container'>
                     <ViewsTitle
                         text={heading}
                     />

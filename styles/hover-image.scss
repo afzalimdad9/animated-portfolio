@@ -1,45 +1,45 @@
-@import './theme.scss';
+@import "./theme.scss";
 
-.mk-hover-image {
-    position: relative;
+.ai-hover-image {
+  position: relative;
 
-    .mk-hover-profile {
-        border-radius: $defaultBorder;
-        filter: grayscale(1);
-        mix-blend-mode: multiply;
+  .ai-hover-profile {
+    border-radius: $defaultBorder;
+    filter: grayscale(1);
+    mix-blend-mode: multiply;
 
-        transition: $allTransitoin3s;
+    transition: $allTransitoin3s;
+  }
+
+  .ai-hover-image-border {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    transform: translateX(7%) translateY(7%);
+    border: 3px solid $themeColor4;
+    border-radius: $defaultBorder;
+    transition: $allTransitoin3s;
+  }
+
+  .ai-hover-image-filter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: $themeColor4;
+    border-radius: $defaultBorder;
+    transition: $allTransitoin3s;
+  }
+
+  &:hover {
+    .ai-hover-profile {
+      filter: grayscale(0);
+      mix-blend-mode: normal;
     }
 
-    .mk-hover-image-border {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-
-        transform: translateX(7%) translateY(7%);
-        border: 3px solid $themeColor4;
-        border-radius: $defaultBorder;
-        transition: $allTransitoin3s;
+    .ai-hover-image-border {
+      transform: translateX(5%) translateY(5%);
     }
-
-    .mk-hover-image-filter {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        background-color: $themeColor4;
-        border-radius: $defaultBorder;
-        transition: $allTransitoin3s;
-    }
-
-        &:hover {
-            .mk-hover-profile {
-                filter: grayscale(0);
-                mix-blend-mode: normal;
-            }
-
-            .mk-hover-image-border {
-                transform: translateX(5%) translateY(5%);
-            }
-        }
+  }
 }

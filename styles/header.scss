@@ -1,164 +1,160 @@
-@import './theme.scss';
+@import "./theme.scss";
 
+.ai-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $headerHeight;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  overflow-x: clip;
+  backdrop-filter: blur(3px);
+  top: 0;
+  padding-top: $scrolledBarHeight;
 
-.mk-header {
+  ::selection {
+    background: inherit;
+    color: inherit;
+  }
+
+  &::before {
+    content: "";
+    // background-color: $themeColor1;
+    position: absolute;
+    width: 100%;
+    height: $headerHeight;
+    opacity: 0.8;
+    top: 0;
+  }
+
+  svg {
+    stroke: $themeColor4;
+    fill: $themeColor4;
+  }
+
+  .ai-header-container {
+    height: calc($headerHeight - $scrolledBarHeight);
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+
+    @media only screen and (max-width: 768px) {
+      width: 90%;
+    }
+
+    .ai-logo-bg {
+      display: flex;
+      background: $themeColor4;
+      border-radius: 50%;
+      overflow: hidden;
+      // border: 2px solid $themeColor3;
+    }
+  }
+
+  .ai-header-list {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: $headerHeight;
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    overflow-x: clip;
-    backdrop-filter: blur(3px);
-    top: 0;
-    padding-top: $scrolledBarHeight;
+    font-size: 13px;
 
-    ::selection {
-        background: inherit;
-        color: inherit;
+    .ai-header-list-label {
+      margin: 0 15px;
+      color: $themeColor3;
     }
 
-    &::before {
-        content: "";
-        // background-color: $themeColor1;
-        position: absolute;
-        width: 100%;
-        height: $headerHeight;
-        opacity: 0.8;
-        top: 0;
+    button {
+      color: $themeColor4;
+      background-color: transparent;
+      border: 1px solid $themeColor4;
+      border-radius: $defaultBorder;
+      padding: 0.75rem 1rem;
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+      margin-left: 15px;
+      font-size: 13px;
+    }
+  }
 
+  .ai-header-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2.5;
+
+    .ai-hamburger-icon {
+      position: relative;
+      z-index: 2;
+      transition: all 500ms cubic-bezier(1, -0.04, 0, 1.03);
     }
 
-    svg {
-        stroke: $themeColor4;
-        fill: $themeColor4;
+    .ai-hamburger {
+      position: absolute;
+      background: $themeColor3;
+      color: $themeColor3;
+      z-index: 1;
+      border-radius: 50%;
+      box-shadow: 0 0 15px -10px black;
+      transform: scale(0);
+      opacity: 0;
+      transition: all 1s cubic-bezier(1, -0.13, 0, 1.18);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
     }
 
-    .mk-header-container {
-        height: calc($headerHeight - $scrolledBarHeight);
-        width: 95%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: absolute;
-
-        @media only screen and (max-width: 768px) {
-            width: 90%;
-        }
-
-        .mk-logo-bg {
-            display: flex;
-            background: $themeColor4;
-            border-radius: 50%;
-            overflow: hidden;
-            // border: 2px solid $themeColor3;
-        }
+    .ai-hamburger-item-bg {
+      content: "";
+      position: relative;
+      background-color: $themeColor4;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
     }
 
-    .mk-header-list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 13px;
+    .ai-hamburger-item {
+      position: absolute;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      border-radius: 50%;
+      box-shadow: 0 0 15px -10px black;
 
-        .mk-header-list-label {
-            margin: 0 15px;
-            color: $themeColor3;
-        }
+      &:hover {
+        color: $themeColor3;
+      }
+    }
+  }
 
-        button {
-            color: $themeColor4;
-            background-color: transparent;
-            border: 1px solid $themeColor4;
-            border-radius: $defaultBorder;
-            padding: 0.75rem 1rem;
-            line-height: 1;
-            text-decoration: none;
-            cursor: pointer;
-            margin-left: 15px;
-            font-size: 13px;
-        }
+  .ai-header-menu {
+    .ai-header-menu-wrapper {
+    }
+  }
+
+  .ai-header-menu-visible {
+    .ai-hamburger {
+      transform: scale(1) rotate(30deg);
+      color: $themeColor2;
+      opacity: 1;
     }
 
-    .mk-header-menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 5;
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 2.5;
+    .ai-hamburger-icon {
+      transform: rotate(3600deg);
+      stroke: $themeColor2;
+      fill: $themeColor2;
 
-        .mk-hamburger-icon {
-            position: relative;
-            z-index: 2;
-            transition: all 500ms cubic-bezier(1, -0.04, 0, 1.03);
-
-        }
-
-        .mk-hamburger {
-            position: absolute;
-            background: $themeColor3;
-            color: $themeColor3;
-            z-index: 1;
-            border-radius: 50%;
-            box-shadow: 0 0 15px -10px black;
-            transform: scale(0);
-            opacity: 0;
-            transition: all 1s cubic-bezier(1, -0.13, 0, 1.18);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-transform: uppercase;
-        }
-
-        .mk-hamburger-item-bg {
-
-            content: "";
-            position: relative;
-            background-color: $themeColor4;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
-
-        .mk-hamburger-item {
-            position: absolute;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            border-radius: 50%;
-            box-shadow: 0 0 15px -10px black;
-
-            &:hover {
-                color: $themeColor3;
-            }
-
-        }
+      svg {
+      }
     }
-
-    .mk-header-menu {
-        .mk-header-menu-wrapper {}
-    }
-
-    .mk-header-menu-visible {
-        .mk-hamburger {
-            transform: scale(1) rotate(30deg);
-            color: $themeColor2;
-            opacity: 1;
-        }
-
-        .mk-hamburger-icon {
-            transform: rotate(3600deg);
-            stroke: $themeColor2;
-            fill: $themeColor2;
-
-            svg {}
-
-        }
-    }
+  }
 }
