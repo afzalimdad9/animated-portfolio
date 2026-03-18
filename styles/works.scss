@@ -1,215 +1,479 @@
 @import "./theme.scss";
 
-.ai-works {
-  width: 100vw;
-  min-height: 100vh;
+// ── Design tokens ────────────────────────────────────────────────────────────
+$accent:      #00e5ff;
+$accent-dim:  rgba(0, 229, 255, 0.12);
+$accent-glow: rgba(0, 229, 255, 0.35);
+$surface:     rgba(255, 255, 255, 0.03);
+$border:      rgba(255, 255, 255, 0.07);
+$text-primary:   $themeColor3;
+$text-secondary: rgba(255, 255, 255, 0.4);
+$font-mono:   'Courier New', 'Consolas', monospace;
 
-  @media (max-width: 768px) {
-    padding: 0 10px;
-  }
+// ── Keyframes ────────────────────────────────────────────────────────────────
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
-  .ai-works-container {
-    width: 100%;
-    max-width: 700px;
-    padding: 100px 0;
-    margin: auto;
+@keyframes fadeSlideLeft {
+    from { opacity: 0; transform: translateX(-14px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 6px $accent-glow; }
+    50%       { box-shadow: 0 0 18px $accent-glow, 0 0 40px rgba(0,229,255,0.15); }
+}
+
+@keyframes bulletReveal {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes dividerExpand {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+// ── Section wrapper ──────────────────────────────────────────────────────────
+.works {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    // Subtle grid background
+    &__grid-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+            linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 100px 0 120px;
+    }
+
+    // ── Breakpoint visibility
+    &__desktop { display: flex;  gap: 0; }
+    &__mobile  { display: none; }
 
     @media (max-width: 768px) {
-      padding: 40px 0 60px;
+        padding: 0 16px;
+        // ✅ Prevents any child from causing horizontal page scroll
+        overflow-x: hidden;
+        max-width: 100vw;
+
+        &__container { padding: 60px 0 80px; }
+        &__desktop   { display: none; }
+        &__mobile    { display: block; }
     }
+}
 
-    .ai-works-tab {
-      display: flex;
+// ── Sidebar ──────────────────────────────────────────────────────────────────
+.works-sidebar {
+    display: flex;
+    flex-shrink: 0;
 
-      .ai-works-left-border {
+    &__track {
         width: 2px;
-        border-radius: $defaultBorder;
-        background-color: $themeColor2;
+        background: $border;
+        border-radius: 99px;
+        position: relative;
+        margin-right: 0;
+    }
 
-        .ai-works-left-border-selection {
-          width: 100%;
-          height: 42px;
-          background-color: $themeColor4;
-          transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-      }
+    &__cursor {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 48px;
+        background: $accent;
+        border-radius: 99px;
+        transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+        box-shadow: 0 0 12px $accent-glow;
+        animation: glowPulse 3s ease-in-out infinite;
+    }
 
-      .ai-works-tab-left {
-        .ai-works-tab-left-button {
-          width: 100%;
-          padding: 10px 20px 10px 10px;
-          white-space: nowrap;
-          font-size: 14px;
-          line-height: 14px;
-          height: 42px;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          cursor: pointer;
-          color: $themeColor3;
-        }
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
 
-        .ai-works-tab-left-button-selected {
-          color: $themeColor4;
-        }
-      }
+    &__btn {
+        all: unset;
+        cursor: pointer;
+        height: 48px;
+        padding: 0 24px 0 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: color 0.25s ease;
+        white-space: nowrap;
+        color: $text-secondary;
 
-      .ai-works-tab-right {
-        flex: 1;
-        color: $themeColor3;
+        &:hover { color: $text-primary; }
 
-        .ai-works-tab-right-title {
-          margin-bottom: 2px;
-          font-size: 22px;
-          font-weight: 600;
-          line-height: 1.3;
-        }
+        &--active {
+            color: $accent;
 
-        .ai-works-tab-right-duration {
-          margin-bottom: 20px;
-          font-size: 13px;
-        }
-
-        .ai-works-tab-right-list {
-          .ai-works-tab-right-list-item {
-            margin-bottom: 10px;
-            font-size: 14px;
-            padding-left: 25px;
-            line-height: 20px;
-
-            &::before {
-              content: "▹";
-              color: $themeColor4;
-              font-size: 18px;
-              line-height: 18px;
-              position: absolute;
-              margin-left: -25px;
+            .works-sidebar__index {
+                color: $accent;
+                opacity: 1;
             }
-          }
-
-
-          .ai-works-tab-right-list-item:last-child{
-            margin-bottom: 24px;
-          }
         }
-      }
     }
-  }
+
+    &__index {
+        font-family: $font-mono;
+        font-size: 11px;
+        opacity: 0.4;
+        letter-spacing: 0.5px;
+        transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    &__label {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+    }
 }
 
+// ── Job panel ────────────────────────────────────────────────────────────────
+.works-panel {
+    flex: 1;
+    padding-left: 36px;
+    animation: panelIn 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 
+    &__job {
+        margin-bottom: 36px;
 
-/* ===== RESPONSIVE VISIBILITY ===== */
+        &:last-child { margin-bottom: 0; }
+    }
 
-.desktop-only {
-  display: flex;
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        animation: fadeSlideIn 0.4s 0.05s both;
+    }
+
+    &__role {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: $text-primary;
+        margin: 0;
+        letter-spacing: -0.3px;
+    }
+
+    &__at {
+        color: $text-secondary;
+        font-weight: 400;
+    }
+
+    &__company {
+        color: $accent;
+    }
+
+    &__badge {
+        flex-shrink: 0;
+        font-family: $font-mono;
+        font-size: 11px;
+        padding: 4px 10px;
+        border: 1px solid rgba(0,229,255,0.25);
+        border-radius: 4px;
+        color: $accent;
+        background: $accent-dim;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        animation: fadeSlideIn 0.4s 0.1s both;
+    }
+
+    &__divider {
+        height: 1px;
+        background: linear-gradient(90deg, $accent 0%, transparent 60%);
+        margin: 14px 0 20px;
+        transform-origin: left;
+        animation: dividerExpand 0.5s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        opacity: 0.35;
+    }
+
+    &__bullets {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
-.mobile-only {
-  display: none;
+// ── Bullet point ─────────────────────────────────────────────────────────────
+.works-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+
+    &--visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &__icon {
+        color: $accent;
+        font-size: 16px;
+        line-height: 20px;
+        flex-shrink: 0;
+        margin-top: 1px;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.65;
+        color: $text-primary;
+    }
 }
 
-@media (max-width: 768px) {
-  .desktop-only {
-    display: none !important;
-  }
+// ── Mobile — new premium design ───────────────────────────────────────────────
 
-  .mobile-only {
-    display: block;
+@keyframes cardRise {
+    from { opacity: 0; transform: translateY(28px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+@keyframes chipGlow {
+    0%, 100% { box-shadow: 0 0 8px $accent-glow; }
+    50%       { box-shadow: 0 0 20px $accent-glow, 0 0 40px rgba(0,229,255,0.1); }
+}
+
+@keyframes pointIn {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.mob-wrap {
+    padding-top: 4px;
+}
+
+// ── Chip row ──────────────────────────────────────────────────────
+.mob-chips__track {
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+    // ✅ Removed margin: 0 -16px — it was pushing the whole page left on mobile
     width: 100%;
-  }
+    overflow: hidden;
 }
 
-/* ===== MODERN ACCORDION ===== */
+.mob-chips {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 12px;
+    scrollbar-width: none;
+    // ✅ Scroll stays inside this element — does not leak to page
+    max-width: 100%;
+    box-sizing: border-box;
 
-.mobile-accordion-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 0; // ✅ removed extra bottom margin
+    &::-webkit-scrollbar { display: none; }
 }
 
-.mobile-accordion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 4px;
-  font-size: 15px;
-  font-weight: 600;
-  color: $themeColor4;
-  cursor: pointer;
-  user-select: none; // ✅ prevents text highlight on tap
-}
-
-.arrow {
-  transition: transform 0.3s ease;
-  font-size: 18px;
-  line-height: 1;
-}
-
-.arrow.open {
-  transform: rotate(180deg);
-}
-
-/* ✅ COLLAPSE ANIMATION — fixed overflow clipping content */
-.mobile-accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  padding: 0 4px;
-}
-
-.mobile-accordion-content.open {
-  max-height: 2000px; // ✅ large enough for multi-job entries
-}
-
-/* ✅ CARD INSIDE ACCORDION */
-.mobile-card {
-  background-color: rgba(255, 255, 255, 0.04); // ✅ subtle, not pitch black
-  padding: 14px 16px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* ✅ THESE WERE MISSING — caused invisible/collapsed content */
-.mobile-role {
-  font-size: 15px;
-  font-weight: 600;
-  color: $themeColor4;
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
-
-.mobile-duration {
-  font-size: 12px;
-  color: $themeColor3;
-  opacity: 0.7;
-  margin-bottom: 12px;
-}
-
-.mobile-points {
-  padding-left: 0;
-  list-style: none;
-  margin: 0;
-
-  li {
+.mob-chip {
+    all: unset;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 99px;
+    border: 1px solid $border;
+    background: $surface;
     font-size: 13px;
-    color: $themeColor3;
-    line-height: 1.6;
-    margin-bottom: 8px;
-    padding-left: 20px;
+    font-weight: 500;
+    color: $text-secondary;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-tap-highlight-color: transparent;
+
+    &:active { transform: scale(0.95); }
+
+    &--active {
+        background: $accent-dim;
+        border-color: $accent;
+        color: $accent;
+        animation: chipGlow 3s ease-in-out infinite;
+    }
+}
+
+.mob-chip__num {
+    font-family: $font-mono;
+    font-size: 10px;
+    opacity: 0.55;
+}
+
+// ── Progress dots ──────────────────────────────────────────────────
+.mob-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.mob-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 99px;
+    background: $border;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &--active {
+        width: 22px;
+        background: $accent;
+        box-shadow: 0 0 8px $accent-glow;
+    }
+}
+
+// ── Job cards ──────────────────────────────────────────────────────
+.mob-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.mob-card {
     position: relative;
+    background: $surface;
+    border: 1px solid $border;
+    border-left: 2px solid rgba(0, 229, 255, 0.4);
+    border-radius: 14px;
+    padding: 18px 18px 18px 20px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
 
-    &::before {
-      content: "▹";
-      color: $themeColor4;
-      font-size: 14px;
-      position: absolute;
-      left: 0;
-      top: 1px;
+    &--visible {
+        animation: cardRise 0.45s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
     }
 
-    &:last-child {
-      margin-bottom: 0;
+    // Top-right ambient glow
+    &__glow {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+        pointer-events: none;
     }
-  }
+
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    &__role {
+        font-size: 15px;
+        font-weight: 700;
+        color: $text-primary;
+        line-height: 1.35;
+        margin-bottom: 2px;
+        letter-spacing: -0.2px;
+    }
+
+    &__company {
+        font-size: 12px;
+        color: $accent;
+        font-weight: 500;
+    }
+
+    &__badge {
+        flex-shrink: 0;
+        font-family: $font-mono;
+        font-size: 10px;
+        padding: 4px 9px;
+        border: 1px solid rgba(0,229,255,0.2);
+        border-radius: 4px;
+        color: $accent;
+        background: $accent-dim;
+        white-space: nowrap;
+        line-height: 1.4;
+    }
+
+    &__divider {
+        height: 1px;
+        background: linear-gradient(90deg, $accent 0%, transparent 55%);
+        opacity: 0.25;
+        margin-bottom: 14px;
+    }
+
+    &__points {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    &__point {
+        display: flex;
+        gap: 10px;
+        font-size: 13px;
+        color: $text-secondary;
+        line-height: 1.6;
+        opacity: 0;
+        transform: translateX(-12px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+
+        &--visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    &__point-icon {
+        color: $accent;
+        font-size: 13px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        line-height: 1.4;
+    }
 }
